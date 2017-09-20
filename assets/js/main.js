@@ -32,12 +32,8 @@ function mostrarLista(estudiantes){
     return estudiantes.map(mostrar);
 }
 
-function eliminarEstudiantes(estudiantes) {
-    return estudiantes.filter(a=>a.puntosTecnicos<70 && a.puntosHSE<70);
-}
-
 function estudiantesPromedioalto(estudiantes) {
-    return estudiantes.filter(a=>a.puntosTecnicos>70 && a.puntosHSE>70);
+    return estudiantes.filter(a=>a.puntosTecnicos>=70 && a.puntosHSE>=70);
 }
 
 function reiniciar() {
@@ -71,9 +67,16 @@ function eventoMostrarEmpleables() {
     let empleables = estudiantesPromedioalto(estudiantes);
     $('#fichas').html(mostrarLista(empleables));
 }
+
+function eventoEliminar() {
+    let eliminar = estudiantesPromedioalto(estudiantes);
+    estudiantes=eliminar;
+    $('#fichas').html(mostrarLista(estudiantes));
+}
 function eventos(params) {
     $("#agregar").click(eventoAgregar);
     $('#agregando').click(reiniciar);
     $('#mostrar').click(eventoMostrar);
-    $('#empleables').click(eventoMostrarEmpleables)
+    $('#empleables').click(eventoMostrarEmpleables);
+    $('#eliminadas').click(eventoEliminar);
 }
