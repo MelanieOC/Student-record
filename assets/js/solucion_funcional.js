@@ -33,7 +33,7 @@ function mostrarLista(estudiantes){
 }
 
 function estudiantesPromedioalto(estudiantes) {
-    return estudiantes.filter(a=>a.puntosTecnicos>=70 && a.puntosHSE>=70);
+    return estudiantes.filter(a=>(a.puntosTecnicos+a.puntosHSE)/2>=70);
 }
 
 function reiniciar() {

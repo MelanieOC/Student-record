@@ -24,10 +24,10 @@ const aplicacion = {
         return fichaEstudiante;
     },
     mostrarLista:(estudiantes)=>{
-        return estudiantes.map(mostrar);
+        return estudiantes.map(aplicacion.mostrar);
     },
     estudiantesPromedioalto:()=> {
-        return aplicacion.estudiantes.filter(a=>a.puntosTecnicos>=70 && a.puntosHSE>=70);
+        return aplicacion.estudiantes.filter(a=>((a.puntosTecnicos+a.puntosHSE)/2)>=70);
     },
     reiniciar:()=>{
         $('#puntosTecnicos').val('');
@@ -40,8 +40,8 @@ const aplicacion = {
     },
     eventoAgregar:()=>{
         let nombre = $('#nombre').val();
-        let puntosTecnicos = $("#puntosTecnicos").val();
-        let puntosHSE = $("#puntosHSE").val();
+        let puntosTecnicos = parseInt($("#puntosTecnicos").val());
+        let puntosHSE = parseInt($("#puntosHSE").val());
         if(nombre==''){
             $("#nombre").next().css('visibility','visible');
         }else{
@@ -58,8 +58,8 @@ const aplicacion = {
         $('#fichas').html(aplicacion.mostrarLista(empleables));
     },
     eventoEliminar:()=> {
-        aplicacion.estudiantesPromedioalto();
-        $('#fichas').html(aplicacion.mostrarLista(estudiantes));
+        aplicacion.estudiantes=aplicacion.estudiantesPromedioalto();
+        $('#fichas').html(aplicacion.mostrarLista(aplicacion.estudiantes));
     },
     iniciar:()=> {
         $("#agregar").click(aplicacion.eventoAgregar);
