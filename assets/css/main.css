@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Varela+Round');
+*{
+    font-family: 'Varela Round', sans-serif;
+}
 header{
     background-color: rgba(30, 61, 145, 0.88);
     font-weight: 600;
@@ -7,20 +11,16 @@ header{
 }
 
 .estudiante{
-    width: 500px;
-    background-color: #25B3EB;
+    width: 40%;
+    background-color: #8AB7F1;
     border: 7px solid rgba(255, 255, 255, 0.84);
     padding: 0 20px 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 120%;
 }
 .range {
     display: table;
     position: relative;
-    height: 25px;
-    margin-top: 20px;
-    background-color: rgb(245, 245, 245);
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 .botones{
@@ -37,7 +37,4 @@ header{
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     width: 1%;
-}
-input {
-    outline: none;
 }
