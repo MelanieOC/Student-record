@@ -47,8 +47,8 @@ function reiniciar() {
 }
 function eventoAgregar (){
     let nombre = $('#nombre').val();
-    let puntosTecnicos = $("#puntosTecnicos").val();
-    let puntosHSE = $("#puntosHSE").val();
+    let puntosTecnicos = parseInt($("#puntosTecnicos").val());
+    let puntosHSE = parseInt($("#puntosHSE").val());
     let estudiante = agregarEstudiante(nombre, puntosTecnicos, puntosHSE);
 
     if(nombre==''){
@@ -69,8 +69,7 @@ function eventoMostrarEmpleables() {
 }
 
 function eventoEliminar() {
-    let eliminar = estudiantesPromedioalto(estudiantes);
-    estudiantes=eliminar;
+    estudiantes = estudiantesPromedioalto(estudiantes);
     $('#fichas').html(mostrarLista(estudiantes));
 }
 function eventos(params) {
