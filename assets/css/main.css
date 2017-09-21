@@ -1,9 +1,16 @@
 header{
-    background-color: #4C4CD1;
+    background-color: rgba(30, 61, 145, 0.88);
     font-weight: 600;
     color: white;
     padding: 20px;
     margin-bottom: 15px;
+}
+
+.estudiante{
+    width: 500px;
+    background-color: #25B3EB;
+    border: 7px solid rgba(255, 255, 255, 0.84);
+    padding: 0 20px 20px;
 }
 .range {
     display: table;
